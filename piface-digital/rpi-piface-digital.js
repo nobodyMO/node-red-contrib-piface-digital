@@ -50,7 +50,7 @@ module.exports = function(RED) {
         this.read = n.read || false;
         if (this.read) { this.buttonState = -2; }
         var node = this;
-        if (node.pin) {
+        if (node.pin>=0) {
            node.pi = new PIFD.PIFaceDigital(node.hardware,true); 
 		   if (node.read)
 		     {
@@ -81,6 +81,7 @@ module.exports = function(RED) {
         else 
 		  {
           node.error("Invalid PiFACE pin: "+node.pin);
+		  node.status({fill:"red",shape:"ring",text:"misconfigured"},true);
           }
         node.on("close", function() {
             pi.unwatch (node.pin);
@@ -94,7 +95,7 @@ module.exports = function(RED) {
         this.set = n.set;
         this.level = n.level;
         var node = this;
-        if (node.pin) 
+        if (node.pin>=0) 
 		  {
            node.pi = new PIFD.PIFaceDigital(node.hardware,true); 			
             if (node.set) 
@@ -115,8 +116,10 @@ module.exports = function(RED) {
 				  }
             });
           }
-        else {
+        else 
+		  {
             node.error("Invalid PiFACE pin: "+node.pin);
+			node.status({fill:"red",shape:"ring",text:"misconfigured"},true);
         }
     }
 
