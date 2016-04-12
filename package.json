@@ -13,7 +13,7 @@
     "keywords": [ "node-red", "piface" ],
     "node-red"      : {
         "nodes"     : {
-            "piface": "piface-digital/rpi-piface-digital.js"
+            "piface-digital": "piface-digital/rpi-piface-digital.js"
         }
     }
 
