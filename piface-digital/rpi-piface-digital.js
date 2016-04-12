@@ -17,8 +17,7 @@
 module.exports = function(RED) {
     "use strict";
     var util = require("util");
-    var PIFD = require("node-pifacedigital");
-	var pi;
+    var PIFD = require('node-pifacedigital');
 	var val = -1;
 
     // Map names of pins to Gordon's gpio PiFace pin numbers
@@ -52,7 +51,7 @@ module.exports = function(RED) {
         if (this.read) { this.buttonState = -2; }
         var node = this;
         if (node.pin) {
-           node.pi = new node.PIFD.PIFaceDigital(node.hardware,true); 
+           node.pi = new PIFD.PIFaceDigital(node.hardware,true); 
 		   if (node.read)
 		     {
 			 node.val = node.pi.get(node.pin);   
@@ -97,7 +96,7 @@ module.exports = function(RED) {
         var node = this;
         if (node.pin) 
 		  {
-           node.pi = new node.PIFD.PIFaceDigital(node.hardware,true); 			
+           node.pi = new PIFD.PIFaceDigital(node.hardware,true); 			
             if (node.set) 
 			  {
               node.pi.set(node.pin,Number(node.level));             
