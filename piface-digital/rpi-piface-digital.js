@@ -32,7 +32,7 @@ module.exports = function(RED) {
         "PIN 6":5,
         "PIN 7":6,
         "PIN 8":7
-    };
+    }
 	
 	var hardwaretable = {
         "Address 0":0,
@@ -40,7 +40,7 @@ module.exports = function(RED) {
         "Address 0":2,
         "Address 0":3		
 		
-	};
+	}
 
 	
     function PiFACEDigitalInNode(n) {
@@ -85,7 +85,6 @@ module.exports = function(RED) {
           }
         node.on("close", function() {
             pi.unwatch (node.pin);
-			;
         });
     }
 
@@ -96,11 +95,13 @@ module.exports = function(RED) {
         this.set = n.set;
         this.level = n.level;
         var node = this;
-        if (node.pin) {
+        if (node.pin) 
+		  {
            node.pi = new node.PIFD.PIFaceDigital(node.hardware,true); 			
-            if (node.set) {
+            if (node.set) 
+			  {
               node.pi.set(node.pin,Number(node.level));             
-            }
+              } 
             node.on("input", function(msg) {
                 if (msg.payload === "true") { msg.payload = true; }
                 if (msg.payload === "false") { msg.payload = false; }
@@ -109,9 +110,12 @@ module.exports = function(RED) {
 				  {
 			      node.pi.set(node.pin,Number(out)); 
                   }
-                else { node.warn("Invalid input - not 0 or 1"); }
+                else 
+				  { 
+			      node.warn("Invalid input - not 0 or 1"); 
+				  }
             });
-        }
+          }
         else {
             node.error("Invalid PiFACE pin: "+node.pin);
         }
