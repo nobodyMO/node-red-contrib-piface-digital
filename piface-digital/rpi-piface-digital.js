@@ -17,7 +17,7 @@
 module.exports = function(RED) {
     "use strict";
     var util = require("util");
-    var PIFD = require('node-pifacedigital');
+    var PIFD = require("node-pifacedigital");
 	var pi;
 	var val = -1;
 
@@ -31,7 +31,7 @@ module.exports = function(RED) {
         "PIN 5":4,
         "PIN 6":5,
         "PIN 7":6,
-        "PIN 8":7,
+        "PIN 8":7
     };
 	
 	var hardwaretable = {
@@ -119,5 +119,4 @@ module.exports = function(RED) {
 
         RED.nodes.registerType("rpi-piface-digital in",PiFACEDigitalInNode);
         RED.nodes.registerType("rpi-piface-digital out",PiFACEDigitalOutNode);
-    });
 }
