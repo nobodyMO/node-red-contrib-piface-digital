@@ -3,7 +3,7 @@
     "author"		: "Markus Korporal",
     "version"       : "0.0.1",
     "description"   : "Node-RED nodes to read from and write to a PiFace Digital Raspberry Pi add-on board based on node-pifacedigital",
-    "dependencies"  : {"node-pifacedigital": ">=0.1.5"
+    "dependencies"  : {"node-pifacedigital": "https://github.com/tualo/node-pifacedigital.git"
     },
     "repository" : {
         "type":"git",
