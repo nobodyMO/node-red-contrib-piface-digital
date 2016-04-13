@@ -17,7 +17,7 @@ Please install all prequisites for <a href="https://github.com/tualo/node-piface
 On a fresh Raspbian installation you should enable SPI. Therefor start `raspi-config` and
 enable SPI under "Advanced Options".
 
-After rebooting you should add your user to the SPI-Group:
+After rebooting you should add your user to the SPI-Group, e.g. for user pi:
 ```
 usermod -a -G spi pi
 ```
