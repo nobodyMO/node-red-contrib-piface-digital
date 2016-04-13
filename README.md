@@ -1,5 +1,4 @@
-node-red-contrib-piface-digital
-====================
+# node-red-contrib-piface-digital
 
 <a href="http://nodered.org" target="_new">Node-RED</a> nodes to control a
 <a href="http://www.piface.org.uk/products/piface_digital/" target="_new">PiFace Digital</a>
@@ -9,21 +8,45 @@ add-on board for a Raspberry-Pi using the node implementation <a href="https://g
 instead of `1 - 8` as on the original boards.
 We cannot automatically detect this so the user will have to apply some common sense.
 
-Install
--------
+
+
+## Pre-reqs
+
+Please install all prequisites for <a href="https://github.com/tualo/node-pifacedigital" target="_new">node-pifacedigital</a> before you install this node:
+
+On a fresh Raspbian installation you should enable SPI. Therefor start `raspi-config` and
+enable SPI under "Advanced Options".
+
+After rebooting you should add your user to the SPI-Group:
+```
+usermod -a -G spi pi
+```
+
+#### Install necessary libraries
+
+```
+git clone https://github.com/piface/libmcp23s17.git
+cd libmcp23s17/
+make
+sudo make install
+```
+
+```
+git clone https://github.com/piface/libpifacedigital.git
+cd libpifacedigital/
+make
+sudo make install
+```
+
+## Install
 
 Run the following command in your Node-RED user directory - typically `~/.node-red` or `/opt/iobroker/node_modules/iobroker.node-red´on a iobroker installation.
 
     npm install node-red-contrib-piface-digital
 
+During the installation, node  <a href="https://github.com/tualo/node-pifacedigital" target="_new">node-pifacedigital</a> will be installed as a local package. The current npm package of this node is outdated due to an dependency to an old version of nan. For that reason this node will be installed directly from github (current master).
 
-Pre-reqs
---------
-
-Please install all prequisites for <a href="https://github.com/tualo/node-pifacedigital" target="_new">node-pifacedigital</a> before you install this node. 
-
-Usage
------
+## Usage
 
 A pair of input and output Node-RED nodes for the Raspberry Pi PiFace Digital
 add-on board.
