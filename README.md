@@ -45,7 +45,6 @@ Run the following command in your Node-RED user directory - typically `~/.node-r
 
     npm install node-red-contrib-piface-digital
 
-During the installation, node  <a href="https://github.com/tualo/node-pifacedigital" target="_new">node-pifacedigital</a> will be installed as a local package. The current npm package of this node is outdated due to an dependency to an old version of nan. For that reason this node will be installed directly from github (current master).
 
 ## Usage
 
