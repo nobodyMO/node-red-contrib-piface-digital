@@ -35,9 +35,9 @@ module.exports = function(RED) {
 	
 	var hardwaretable = {
         "Address 0":0,
-        "Address 0":1,
-        "Address 0":2,
-        "Address 0":3		
+        "Address 1":1,
+        "Address 2":2,
+        "Address 3":3		
 		
 	}
 
