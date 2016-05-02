@@ -13,7 +13,7 @@ We cannot automatically detect this so the user will have to apply some common s
 ## Pre-reqs
 
 Please install all prequisites for <a href="https://github.com/tualo/node-pifacedigital" target="_new">node-pifacedigital</a> before you install this node:
-Please consider that the current Version <a href="https://github.com/tualo/node-pifacedigital" target="_new">node-pifacedigital</a> on github only supports node.js >=4.x.x. The Version on npmjs.com is outdated. For that reason, it will be installed directly vom gitbub.
+Please consider that the current Version <a href="https://github.com/tualo/node-pifacedigital" target="_new">node-pifacedigital</a> on npm only supports node.js >=4.x.x.
 
 On a fresh Raspbian installation you should enable SPI. Therefor start `raspi-config` and
 enable SPI under "Advanced Options".
