@@ -51,6 +51,18 @@ Run the following command in your Node-RED user directory - typically `~/.node-r
 A pair of input and output Node-RED nodes for the Raspberry Pi PiFace Digital
 add-on board.
 
+### PiFace board number
+
+The hardware address the board must be set with the jumper on the board.
+To address the boards use the following jumper settings:
+
+| Board number  | JP1 | JP2 |
+| ------------- |:---:|:---:|
+| Address 0     |  0  |  0  |
+| Address 1     |  1  |  0  |
+| Address 2     |  0  |  1  |
+| Address 3     |  1  |  1  |
+
 ### Output
 
 The PiFace output node will set the selected pin on or off
