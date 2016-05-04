@@ -45,6 +45,7 @@ Run the following command in your Node-RED user directory - typically `~/.node-r
 
     npm install node-red-contrib-piface-digital
 
+If you get error messages during the installation, try the npm option `--unsafe-perm` to avoid permission errors.
 
 ## Usage
 
