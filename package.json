@@ -1,7 +1,7 @@
 {
     "name"          : "node-red-contrib-piface-digital",
     "author"		: "Markus Korporal",
-    "version"       : "0.0.3",
+    "version"       : "0.0.4",
     "description"   : "Node-RED nodes to read from and write to a PiFace Digital Raspberry Pi add-on board based on node-pifacedigital",
     "dependencies"  : {"node-pifacedigital": ">=0.1.7"
     },
