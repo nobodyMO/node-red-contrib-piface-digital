@@ -18,7 +18,6 @@ module.exports = function(RED) {
     "use strict";
     var util = require("util");
     var PIFD = require('node-pifacedigital');
-	var val = -1;
 
     // Map names of pins to Gordon's gpio PiFace pin numbers
     var pintable = {
@@ -55,7 +54,7 @@ module.exports = function(RED) {
 		   if (node.read)
 		     {
 			 node.val = node.pi.get(node.pin);   
-	  	     var msg = {topic:"piface/"+node.npin, payload:val};
+		     var msg = {topic:"piface/"+node.npin, payload:node.val};
              node.send(msg);		     
 			 }  
            		 
@@ -84,7 +83,7 @@ module.exports = function(RED) {
 		  node.status({fill:"red",shape:"ring",text:"misconfigured"},true);
           }
         node.on("close", function() {
-            pi.unwatch (node.pin);
+            node.pi.unwatch (node.pin);
         });
     }
 
